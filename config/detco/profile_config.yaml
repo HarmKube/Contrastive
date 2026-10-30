@@ -1,0 +1,41 @@
+# Profile configuration for DETCO training with YOLOv8 backbone
+# --------------------------------------------------------------
+# Copy this file and override individual values as needed.
+
+# ----------------------------
+# Dataset parameters
+# ----------------------------
+dataset:
+  root: "/mydata/profile_test_dataset"   # path to your unlabeled images
+  image_size: 960                # crop size for global views
+  batch_size: 16
+  num_workers: 8
+  shuffle: true
+  persistent_workers: true
+
+# ----------------------------
+# Model parameters
+# ----------------------------
+model:
+  yolo_cfg: yolov8n.yaml          # Ultralytics model definition
+  backbone_layers: 10             # how many layers to keep as backbone
+  checkpoint_path: 1000_epochs.pt
+
+# ----------------------------
+# Training hyper‑parameters
+# ----------------------------
+training:
+  epochs: 1
+  patience: 30
+  lr: 0.0002
+  weight_decay: 0.0
+  temperature: 0.1               # NT‑Xent temperature
+  memory_bank_size: [4096, 128]  # [queue_len, feature_dim]
+  use_amp: true                  # enable Automatic Mixed Precision
+  enable_profiling: true
+
+# ----------------------------
+# Misc
+# ----------------------------
+seed: 42
+device: cuda                     # set to 'cpu' to force CPU training

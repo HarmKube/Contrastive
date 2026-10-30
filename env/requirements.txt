@@ -1,0 +1,35 @@
+# Specify Python version (informational; not enforced by pip)
+# python==3.9
+
+# Core packages
+numpy==1.26.4
+python-dotenv
+ruff
+tqdm==4.66.2
+
+# PyTorch + CUDA 12.1 (official pip wheel with CUDA support)
+torch==2.1.0+cu121
+torchvision==0.16.0+cu121
+torchaudio==2.1.0+cu121
+lightly==1.5.20
+lightning==2.5.1.post0
+tensorboard==2.19.0
+# Add PyTorch wheel index URL to support the +cu121 versions
+--extra-index-url https://download.pytorch.org/whl/cu121
+scikit-learn
+
+# OCR library
+easyocr
+
+# Ultralytics YOLO
+ultralytics
+
+# Video processing
+pytubefix==8.13.1
+opencv-python==4.9.0.80
+
+# Pretraining Of the shelf
+lightly-train==0.8.0
+
+# Interpretation
+captum==0.8.0

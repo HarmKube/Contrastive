@@ -1,0 +1,4 @@
+epochs: 3500
+batch_size: 1024
+method: "simclr"
+num_workers: 8

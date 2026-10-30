@@ -1,0 +1,9 @@
+epochs: 500
+batch_size: 128
+method: "distillation"
+num_workers: 16
+transform_args:
+  image_size: [490,490]
+  random_resize:
+    min_scale: 1.0
+    max_scale: 1.0
